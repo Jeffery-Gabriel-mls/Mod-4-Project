@@ -3,5 +3,11 @@ import { renderArtCollection } from "./dom";
 
 const loadGallery = async () => {
     const { data, error } = await artCollection()
-}
-loadGallery()
+
+    if (error || !data) {
+        console.log('Error loading ART.');
+        return
+    }
+    renderArtCollection(data);
+};
+loadGallery();

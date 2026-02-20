@@ -18,4 +18,4 @@ export const renderArtCollection = (pieces) => {
         galleryArt.appendChild(li);
 
     });
-};
+}; 
