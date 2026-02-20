@@ -2,6 +2,8 @@ export const renderArtCollection = (pieces) => {
     const galleryArt = document.querySelector('#gallery-art');
     galleryArt.innerHTML = '';
 
+
+    pieces.filter(piece => piece.image_id);
     pieces.forEach(piece => {
         const imgUrl = `https://www.artic.edu/iiif/2/${piece.image_id}/full/843,/0/default.jpg`
 
