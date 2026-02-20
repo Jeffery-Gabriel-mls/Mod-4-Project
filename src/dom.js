@@ -18,7 +18,7 @@ export const renderArtCollection = (pieces) => {
         galleryArt.appendChild(li);
 
     });
-}; 
+};
 // export async const fetchSinglePiece = (url) => {
 //     const response = await fetch(url);
 //     const art = await response.json();
