@@ -5,16 +5,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Art-Gallery</title>
-  <link rel="art-pieces" href="styles.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
+
+  <header>
+    <h1 id="title-name"> Art <span class="dot-text">.</span></h1>
+  </header>
+
   <main>
-    <header>
-      <h1 id="title-name"> Art <span class="dot-text">.</span></h1>
-    </header>
     <section id="filter-options">
-      <!-- <form action="/search" method="get">
+      <form action="/search" method="get">
 
         <label>
           <input type="checkbox" name="filter" value="option1"> Option 1
@@ -22,26 +24,20 @@
 
         <button type="submit">Filter</button>
 
-      </form> -->
+      </form>
     </section>
 
-    <section id="art-solo-mvp-details" class="hidden">
+    <dialog id="art-solo-mvp-details">
 
-      <!-- <figure>
-       <img src="" alt="">
+      <figure>
+        <img src="" alt="">
         <figcaption id="img-solo-caption">
-          <h2 class="art-img-title"></h2> 
-         <p></p> 
+          <h2 class="art-img-title"></h2>
+          <p></p>
         </figcaption>
-      </figure> -->
-      <!-- 
-example for form: 
-      <h2 id="art-title"></h2>
-      <img src="" alt="" id="art-img">
-      <p id=""></p>
-      <p id="art-description"></p>
-      <p>Rating: <span id="art-gallery-rating"></span> / 5</p> -->
-    </section>
+      </figure>
+
+    </dialog>
 
 
     <section id="gallery-art-sec">
