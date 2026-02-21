@@ -9,7 +9,7 @@ export const renderArtCollection = (pieces) => {
 
 
         const li = document.createElement('li');
-        li.dataset.artID = piece.id
+        li.dataset.artId = piece.id
 
         const img = document.createElement('img');
         img.src = imgUrl
