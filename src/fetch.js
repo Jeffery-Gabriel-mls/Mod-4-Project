@@ -13,4 +13,20 @@ export const artCollection = async () => {
     return { data: null, error: error }
   };
 }
-// artCollection(); test 
+// artCollection(); //test
+
+export const artPiece = async (id) => {
+  try {
+    const response = await fetch(`https://api.artic.edu/api/v1/artworks/${id}?fields=title,image_id,description,place_of_origin,artist_display,artist_title,credit_line`);
+    if (!response.ok) {
+      throw Error(`Fetch failed. ${response.status} ${response.statusText}`);
+    }
+    const art = await response.json();
+    return { data: art.data, error: null }
+  } catch (error) {
+    console.warn(`ERROR ERROR ERROR!`, error);
+    return { data: null, error: error }
+  };
+}
+
+// artPiece() // test
