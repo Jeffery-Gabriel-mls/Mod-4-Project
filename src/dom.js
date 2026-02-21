@@ -26,6 +26,7 @@ export const renderSingleArt = (art) => {
     // grabbing the "Landing Page" section from HTML
     const soloSection = document.getElementById('art-solo-mvp-details');
     soloSection.innerHTML = ''; // clears previous content
+    soloSection.showModal();
 
     // creating the element "figure" that will hold the art and its details
     const figure = document.createElement('figure');
