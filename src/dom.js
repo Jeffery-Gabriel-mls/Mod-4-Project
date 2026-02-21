@@ -1,3 +1,8 @@
+import { artCollection, artPiece } from "./fetch";
+
+
+
+
 export const renderArtCollection = (pieces) => {
     const galleryArt = document.querySelector('#gallery-art');
     galleryArt.innerHTML = '';
@@ -21,18 +26,24 @@ export const renderArtCollection = (pieces) => {
 
     });
 };
+const soloSection = document.querySelector('#art-solo-mvp-details');
+// const artImgId = await artPiece(art.image_id);
 
 export const renderSingleArt = (art) => {
     // grabbing the "Landing Page" section from HTML
-    const soloSection = document.getElementById('art-solo-mvp-details');
+
     soloSection.innerHTML = ''; // clears previous content
     soloSection.showModal();
+
 
     // creating the element "figure" that will hold the art and its details
     const figure = document.createElement('figure');
 
+
+    const imgUrl = `https://www.artic.edu/iiif/2/${art.image_id}/full/843,/0/default.jpg`
+
     const img = document.createElement('img');
-    img.src = art.image_id;
+    img.src = imgUrl;
     img.alt = art.title;
 
     // figcaption holds all the "detail" elements
@@ -57,3 +68,10 @@ export const renderSingleArt = (art) => {
     figure.append(img, figcaption);
     soloSection.appendChild(figure);
 };
+
+
+soloSection.addEventListener('click', (e) => {
+    if (e.target === soloSection) {
+        soloSection.close();
+    }
+})
