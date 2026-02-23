@@ -57,3 +57,40 @@ export const renderSingleArt = (art) => {
     figure.append(img, figcaption);
     soloSection.appendChild(figure);
 };
+
+export const renderFilters = (pieces) => {
+    /*
+    unique values for each category. In soccer terms, each player has stats:
+    their nationality, position, club, and their name.
+    .map() goes through each player and grabs THAT stat
+    new Set() removes duplicates 
+    .filter() removes blank entries, ex. player with no nationality
+    */
+    const origins = [...new Set(pieces.map(p => p.place_of_origin).filter(Boolean))];
+    const artTypes = [...new Set(pieces.map(p => p.artwork_type_title).filter(Boolean))];
+    const artists = [...new Set(pieces.map(p => p.artist_title).filter(Boolean))];
+    const categories = [...new Set(pieces.flatMap(p => p.category_titles).filter(Boolean))];
+
+    // map each category to its filter container in the HTML
+    const filterMap = {
+        'place_of_origin': { values: origins, containerId: 'filter-origin' },
+        'artwork_type_title': { values: artTypes, containerId: 'filter-type' },
+        'artist_title': { values: artists, containerId: 'filter-artist' },
+        'category_titles': { values: categories, containerId: 'filter-category' },
+    };
+
+    Object.entries(filterMap).forEach(([field, { values, containerId }]) => {
+        const container = document.getElementById(containerId);
+        container.innerHTML = '';
+        values.forEach(value => {
+            const label = document.createElement('label');
+            const checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.value = value;
+            checkbox.dataset.field = field; // stores which category it belongs to
+            checkbox.classList.add('art-filter'); // shared class for all filter checkboxes
+            label.append(checkbox, value);
+            container.appendChild(label);
+        });
+    });
+};
