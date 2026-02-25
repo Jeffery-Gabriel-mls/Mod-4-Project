@@ -13,7 +13,7 @@ export const artCollection = async () => {
     return { data: null, error: error }
   };
 }
-// artCollection(); //test
+// artCollection(); //testf
 
 export const artPiece = async (id) => {
   try {

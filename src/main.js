@@ -53,19 +53,29 @@ const loadGallery = async () => {
         });
     });
 
-    const galleryArt = document.querySelectorAll('#gallery-art li');
-    galleryArt.forEach((art) => {
-        art.addEventListener('click', async () => {
-            const artId = art.dataset.artId;
-            const { data, error } = await artPiece(artId);
-            if (error || !data) {
-                console.log('Error loading art piece.');
-                return;
-            }
-            renderSingleArt(data);
-        })
-    })
+    const galleryArt = document.querySelector('#gallery-art');
+    galleryArt.addEventListener('click', async (e) => {
+        const li = e.target.closest('li');
+        if (!li) return;
+        const artId = li.dataset.artId;
+        const { data, error } = await artPiece(artId);
+        if (error || !data) {
+            console.log('Error loading art piece.');
+            return;
+        }
+        renderSingleArt(data);
+    });
+    // const galleryArt = document.querySelectorAll('#gallery-art li');
+    //     galleryArt.forEach((art) => {
+    //         art.addEventListener('click', async () => {
+    //             const artId = art.dataset.artId;
+    //             const { data, error } = await artPiece(artId);
+    //             if (error || !data) {
+    //                 console.log('Error loading art piece.');
+    //                 return;
+    //             }
+    //             renderSingleArt(data);
+    //         })
+    //     })
 };
 loadGallery();
-
-
