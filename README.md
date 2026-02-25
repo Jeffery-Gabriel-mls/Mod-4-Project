@@ -45,6 +45,7 @@ HTML - CSS - JavaScript - Vite
 ## *KNOWN LIMITATIONS*
 - Unable to properly adapt the page for mobile devices
 - No drop-down for the list of filters each category has
+- No `localStorage`, will add a "bookmark" feature in the future
 
 ## *Claude.AI Usage*
 Claude.ai Usage link: https://claude.ai/share/a184d4e6-cdb3-4119-b859-a2f7bda37436
