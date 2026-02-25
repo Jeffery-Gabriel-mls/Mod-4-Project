@@ -2,7 +2,8 @@
 
 Tiki Taka is an interactive art gallery web app that lets users browse and examine many of the artworks from the Art Institute of Chicago API.
 
-Site: ..goes here..
+## *Site*
+https://jeffery-gabriel-mls.github.io/Mod-4-Project/
 
 **By:** Gabriel C, Jeffrey C
 
