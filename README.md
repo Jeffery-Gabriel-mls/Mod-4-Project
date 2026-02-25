@@ -18,10 +18,11 @@ Api used:
 ### *STRETCH*
 - Filter by place of origin, category type
 ## *SETUP*
+``` js
+npm install
 
-**"npm install"**
-
-**"npm run dev"** 
+npm run dev
+```
 
 ## *TECH STACK*
 HTML - CSS - JavaScript - Vite
@@ -40,3 +41,6 @@ HTML - CSS - JavaScript - Vite
 // FILTER PIC GOES HERE
 
 ## *KNOWN LIMITATIONS*
+- No drop-down for the list of filters each category has
+- Unable to properly adapt the page for mobile devices
+- 
